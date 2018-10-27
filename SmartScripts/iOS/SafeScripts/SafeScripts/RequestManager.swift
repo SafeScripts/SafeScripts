@@ -11,16 +11,10 @@ import Alamofire
 
 class RequestManager {
     
-    let baseURL = "https://api.particle.io"
-    let accessToken = "Bearer 5f954d861ab114c44a2ac650e9c69ec1bfc6de3b"
-    
-    init() {
-        //POST DEVICE ID, FUNCTION
-        
-        //FROM DEVICE TO SERVER
-        
-        //WEB HOOK
-    }
+    static let apiBaseURL = "192.168.60.57/5000/api/main"
+    static let baseURL = "http://192.168.60.57:5000/db"
+    static let carlaURL = "http://207.250.0.170:5000/db"
+    static let getURL = "http://207.250.0.170:5000/db"
     
     /**
      // All three of these calls are equivalent
@@ -30,21 +24,26 @@ class RequestManager {
 
      **/
     
-    func makeRequest(url: URL) {
-        guard let newURL = URL(string: baseURL + "/v1/devices") else { return }
-        let headers = ["Authorization": accessToken]
-        //let headers = HTTPHeaders(dictionaryLiteral: @["Authorization": accessToken])
-        do {
-            let urlRequest = try URLRequest(url: newURL, method: .get, headers: headers)
-            Alamofire.request(urlRequest).response { (response) in
-                guard let data = response.data else { return }
-                print(response)
-                let str = String(data: data, encoding: .utf8)
-                print(str)
-            }
-        } catch {
-            print("NONONNONONONON")
+    static func savePrescription(_ script: PrescriptionReminder) {
+        guard let newURL = URL(string: getURL) else { return }
+        let request = URLRequest(url: newURL)
+        let task = URLSession.shared.dataTask(with: request) {  data, response, error in
+            
         }
-     
+        task.resume()
+    
+        
+//        if var urlRequest = try? URLRequest(url: newURL, method: .post) {
+//            let encoder = JSONEncoder()
+//                if let encoded = try? encoder.encode(script) {
+//                    urlRequest.httpBody = encoded
+//                    let task = URLSession.shared.dataTask(with: urlRequest) {
+//                        data, response, error in
+//                        // Your completion handler code here
+//                    }
+//                task.resume()
+//            }
+//        }
     }
+
 }

@@ -14,6 +14,8 @@ class ReminderViewController: UIViewController {
     let prescriptionDescription = UITextField()
     let timePicker = UIDatePicker()
     
+    let saveButton = UIButton()
+    
     init() {
         super.init(nibName: nil, bundle: nil)
     }
@@ -25,10 +27,7 @@ class ReminderViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-    
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(tapped))
-        view.addGestureRecognizer(gesture)
-        
+
         view.addSubview(prescriptionName)
         prescriptionName.clipsToBounds = true
         prescriptionName.layer.borderWidth = 1.0
@@ -39,11 +38,25 @@ class ReminderViewController: UIViewController {
         prescriptionDescription.layer.borderColor = UIColor.black.cgColor
         view.addSubview(timePicker)
         
+        saveButton.setTitle("Save Reminder", for: .normal)
+        saveButton.setTitleColor(.black, for: .normal)
+        saveButton.layer.borderWidth = 1.0
+        saveButton.layer.borderColor = UIColor.black.cgColor
+        
+        saveButton.addTarget(self, action: #selector(tapped), for: .touchUpInside)
+        view.addSubview(saveButton)
+        
         timePicker.datePickerMode = .time
         timePicker.clipsToBounds = true
     }
     
+    
     @objc private func tapped() {
+        guard let text = prescriptionName.text, let description = prescriptionDescription.text else { return }
+        let time = timePicker.date
+        let reminder = PrescriptionReminder(slot: 1, name: text, description: description, time: time.timeIntervalSince1970, frequency: "daily", active: true)
+        Prescriptions.shared.addPrescription(reminder)
+        
         
         dismiss(animated: true, completion: nil)
     }
@@ -57,6 +70,7 @@ class ReminderViewController: UIViewController {
         var prescriptionNameFrame = CGRect.zero
         var prescriptionDescriptionFrame = CGRect.zero
         var pickerFrame = CGRect.zero
+        var saveButtonFrame = CGRect.zero
         
         prescriptionNameFrame.origin.x = 12
         prescriptionNameFrame.origin.y = 12 + view.safeAreaInsets.top
@@ -73,8 +87,14 @@ class ReminderViewController: UIViewController {
         pickerFrame.origin.y = prescriptionDescriptionFrame.maxY + 24
         pickerFrame.origin.x = 12
         
+        saveButtonFrame.origin.x = 12
+        saveButtonFrame.size.width = size.width - 24
+        saveButtonFrame.size.height = 50
+        saveButtonFrame.origin.y = size.height - saveButtonFrame.size.height - view.safeAreaInsets.bottom
+        
         prescriptionName.frame = prescriptionNameFrame
         prescriptionDescription.frame = prescriptionDescriptionFrame
         timePicker.frame = pickerFrame
+        saveButton.frame = saveButtonFrame
     }
 }

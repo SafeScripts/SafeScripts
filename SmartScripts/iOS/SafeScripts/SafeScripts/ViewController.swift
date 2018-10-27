@@ -9,18 +9,25 @@
 import UIKit
 import CoreBluetooth
 
+public struct Constants  {
+    static let prescriptions = "com.safescripts.prescriptions"
+}
+
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     let tableView = UITableView()
     let button = UIButton()
-    
-    let requestManager = RequestManager()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
         commonSetup()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
     
     public func commonSetup() {
@@ -70,6 +77,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //MARK: - TableView Delegate
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Current Reminders"
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // We selected something, do something
     }
@@ -82,13 +93,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Number of rows in section
-        return 1
+        return Prescriptions.shared.prescriptions.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reminderCell")
         if let cell = cell as? ReminderCell {
-            let newViewModel = PillBoxReminderViewModel()
+            let reminder = Prescriptions.shared.prescriptions[indexPath.item]
+            let newViewModel = PillBoxReminderViewModel(reminder: reminder)
             cell.configureCell(viewModel: newViewModel)
         }
         

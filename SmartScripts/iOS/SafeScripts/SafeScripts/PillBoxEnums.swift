@@ -17,3 +17,34 @@ enum PillDays: String, CaseIterable {
     case saturday = "Saturday"
     case sunday = "Sunday"
 }
+
+
+public class Prescriptions {
+    static let shared = Prescriptions()
+    
+    private(set) var prescriptions: [PrescriptionReminder] = []
+    
+    init() {
+        //THE WRONG WAY TO DO THIS!!!!
+            if let objects = UserDefaults.standard.value(forKey: Constants.prescriptions) as? Data {
+                let decoder = JSONDecoder()
+                if let objectsDecoded = try? decoder.decode(Array.self, from: objects) as [PrescriptionReminder] {
+                    prescriptions = objectsDecoded
+                }
+            }
+        }
+    
+    func terribleSave() {
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(prescriptions) {
+            UserDefaults.standard.set(encoded, forKey: Constants.prescriptions)
+        }
+    }
+    
+    func addPrescription(_ script:PrescriptionReminder) {
+        prescriptions.append(script)
+        terribleSave()
+        RequestManager.savePrescription(script)
+    }
+}
+
