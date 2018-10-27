@@ -93,7 +93,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         button.frame = buttonFrame
         tableView.frame = tableViewFrame
-    //    onLightButton.frame = onFrame
+        onLightButton.frame = onFrame
     }
     
     //MARK: - TableView Delegate
