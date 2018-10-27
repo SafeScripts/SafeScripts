@@ -17,6 +17,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         
         view.addSubview(tableView)
+        commonSetup()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -59,7 +60,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reminderCell")
+        if let cell = cell as? ReminderCell {
+            let newViewModel = PillBoxReminderViewModel()
+            cell.configureCell(viewModel: newViewModel)
+            cell.sizeThatFits(view.bounds.size)
+        }
+        
+        return cell ?? UITableViewCell()
     }
     
 }
