@@ -10,13 +10,14 @@ router.post('/', function(req, res) {
         let whentotake = req.body.time
         let frequency = req.body.frequency
         let active = req.body.active
+        let slot = req.body.slot
         if (err) {
             console.log('Pool Connection Error');
             done();
             res.sendStatus(500);
         } else {
-            let query = "INSERT INTO prescription (name, description, whentotake, frequency, active) VALUES ($1, $2, $3, $4, $5);";
-            client.query(query, [name, description, whentotake, frequency, active], function (quErr, resObj){
+            let query = "INSERT INTO prescription (name, description, whentotake, frequency, active, slot) VALUES ($1, $2, $3, $4, $5);";
+            client.query(query, [name, description, whentotake, frequency, active, slot], function (quErr, resObj){
                 done();
                 if (quErr) {
                     console.log('query error', quErr);
