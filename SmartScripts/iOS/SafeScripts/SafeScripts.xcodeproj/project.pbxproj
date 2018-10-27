@@ -12,6 +12,8 @@
 		655B22BE2184C6FD0059FFC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 655B22BC2184C6FD0059FFC3 /* Main.storyboard */; };
 		655B22C02184C6FF0059FFC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 655B22BF2184C6FF0059FFC3 /* Assets.xcassets */; };
 		655B22C32184C6FF0059FFC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 655B22C12184C6FF0059FFC3 /* LaunchScreen.storyboard */; };
+		655B22CB2184D2C20059FFC3 /* ReminderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655B22CA2184D2C20059FFC3 /* ReminderCell.swift */; };
+		655B22CD2184D5F40059FFC3 /* PillBoxReminderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655B22CC2184D5F40059FFC3 /* PillBoxReminderViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		655B22BF2184C6FF0059FFC3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		655B22C22184C6FF0059FFC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		655B22C42184C6FF0059FFC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		655B22CA2184D2C20059FFC3 /* ReminderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderCell.swift; sourceTree = "<group>"; };
+		655B22CC2184D5F40059FFC3 /* PillBoxReminderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillBoxReminderViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 			children = (
 				655B22B82184C6FD0059FFC3 /* AppDelegate.swift */,
 				655B22BA2184C6FD0059FFC3 /* ViewController.swift */,
+				655B22CA2184D2C20059FFC3 /* ReminderCell.swift */,
+				655B22CC2184D5F40059FFC3 /* PillBoxReminderViewModel.swift */,
 				655B22BC2184C6FD0059FFC3 /* Main.storyboard */,
 				655B22BF2184C6FF0059FFC3 /* Assets.xcassets */,
 				655B22C12184C6FF0059FFC3 /* LaunchScreen.storyboard */,
@@ -136,6 +142,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				655B22BB2184C6FD0059FFC3 /* ViewController.swift in Sources */,
+				655B22CD2184D5F40059FFC3 /* PillBoxReminderViewModel.swift in Sources */,
+				655B22CB2184D2C20059FFC3 /* ReminderCell.swift in Sources */,
 				655B22B92184C6FD0059FFC3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

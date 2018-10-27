@@ -16,9 +16,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.backgroundColor = .blue
         view.addSubview(tableView)
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    public func commonSetup() {
+        tableView.register(ReminderCell.self, forCellReuseIdentifier: "reminderCell")
+        tableView.delegate = self
+        tableView.dataSource = self
     }
 
     override func viewDidLayoutSubviews() {
@@ -51,6 +56,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Number of rows in section
         return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
     }
     
 }
