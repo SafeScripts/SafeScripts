@@ -1,0 +1,26 @@
+{
+  "name": "safescripts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChadEBrady/SafeScripts.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChadEBrady/SafeScripts/issues"
+  },
+  "homepage": "https://github.com/ChadEBrady/SafeScripts#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "pg": "^7.6.0",
+    "session-middleware": "^1.0.2"
+  }
+}

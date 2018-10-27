@@ -76,3 +76,9 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+
+# node server
+node_modules
+*.log
+src/globals.js
+.env
