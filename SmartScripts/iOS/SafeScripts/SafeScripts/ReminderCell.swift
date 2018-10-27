@@ -14,7 +14,7 @@ public class ReminderCell: UITableViewCell {
     
     public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        addSubview(textView)
+        contentView.addSubview(textView)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -23,7 +23,13 @@ public class ReminderCell: UITableViewCell {
     
     public func configureCell(viewModel: PillBoxReminderViewModel) {
         textView.text = viewModel.medicationName
-        backgroundColor = .blue
+        textView.textColor = .black
+        textView.font = UIFont.systemFont(ofSize: 16)
+    }
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        _ = sizeThatFits(bounds.size)
     }
     
     public override func sizeThatFits(_ size: CGSize) -> CGSize {
@@ -32,10 +38,12 @@ public class ReminderCell: UITableViewCell {
         var textViewFrame = CGRect.zero
         textViewFrame.origin.x = 12
         textViewFrame.origin.y = 12
-        textViewFrame.size = textView.intrinsicContentSize
+        textViewFrame.size = textView.sizeThatFits(size)
         
         cellSize.width = size.width
         cellSize.height = textViewFrame.maxY + 12
+        
+        textView.frame = textViewFrame
         
         return cellSize
     }

@@ -23,12 +23,9 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pE1-cT-eul" secondAttribute="trailing" constant="68" id="3bn-d5-nEj"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pE1-cT-eul" secondAttribute="bottom" constant="342" id="Gh3-L1-4pe"/>
-                            <constraint firstItem="pE1-cT-eul" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="N5h-SZ-hRE"/>
-                            <constraint firstItem="pE1-cT-eul" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="105" id="mBf-O7-hey"/>
-                        </constraints>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" notEnabled="YES"/>
+                        </accessibility>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>

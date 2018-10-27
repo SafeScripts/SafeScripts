@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		654425EA2184FD720066E5E4 /* PillBoxEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654425E92184FD720066E5E4 /* PillBoxEnums.swift */; };
 		655B22B92184C6FD0059FFC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655B22B82184C6FD0059FFC3 /* AppDelegate.swift */; };
 		655B22BB2184C6FD0059FFC3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655B22BA2184C6FD0059FFC3 /* ViewController.swift */; };
 		655B22BE2184C6FD0059FFC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 655B22BC2184C6FD0059FFC3 /* Main.storyboard */; };
@@ -14,9 +15,13 @@
 		655B22C32184C6FF0059FFC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 655B22C12184C6FF0059FFC3 /* LaunchScreen.storyboard */; };
 		655B22CB2184D2C20059FFC3 /* ReminderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655B22CA2184D2C20059FFC3 /* ReminderCell.swift */; };
 		655B22CD2184D5F40059FFC3 /* PillBoxReminderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655B22CC2184D5F40059FFC3 /* PillBoxReminderViewModel.swift */; };
+		655B22CF2184E2130059FFC3 /* ReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655B22CE2184E2130059FFC3 /* ReminderViewController.swift */; };
+		655B22D12184E23F0059FFC3 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655B22D02184E23F0059FFC3 /* RequestManager.swift */; };
+		FD789BF53027A28761226150 /* Pods_SafeScripts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB207CFB5A5CB250324FDA9B /* Pods_SafeScripts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		654425E92184FD720066E5E4 /* PillBoxEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillBoxEnums.swift; sourceTree = "<group>"; };
 		655B22B52184C6FD0059FFC3 /* SafeScripts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeScripts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		655B22B82184C6FD0059FFC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		655B22BA2184C6FD0059FFC3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -26,6 +31,11 @@
 		655B22C42184C6FF0059FFC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		655B22CA2184D2C20059FFC3 /* ReminderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderCell.swift; sourceTree = "<group>"; };
 		655B22CC2184D5F40059FFC3 /* PillBoxReminderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillBoxReminderViewModel.swift; sourceTree = "<group>"; };
+		655B22CE2184E2130059FFC3 /* ReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewController.swift; sourceTree = "<group>"; };
+		655B22D02184E23F0059FFC3 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		B92013BA9D439E807E88C789 /* Pods-SafeScripts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeScripts.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SafeScripts/Pods-SafeScripts.debug.xcconfig"; sourceTree = "<group>"; };
+		EB207CFB5A5CB250324FDA9B /* Pods_SafeScripts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafeScripts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC80C10E5131537217F34D99 /* Pods-SafeScripts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeScripts.release.xcconfig"; path = "Pods/Target Support Files/Pods-SafeScripts/Pods-SafeScripts.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +43,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD789BF53027A28761226150 /* Pods_SafeScripts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		610DC9113842945406488D0F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EB207CFB5A5CB250324FDA9B /* Pods_SafeScripts.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		655B22AC2184C6FD0059FFC3 = {
 			isa = PBXGroup;
 			children = (
 				655B22B72184C6FD0059FFC3 /* SafeScripts */,
 				655B22B62184C6FD0059FFC3 /* Products */,
+				9455FF585ECC085E1D91E267 /* Pods */,
+				610DC9113842945406488D0F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +81,9 @@
 			children = (
 				655B22B82184C6FD0059FFC3 /* AppDelegate.swift */,
 				655B22BA2184C6FD0059FFC3 /* ViewController.swift */,
+				655B22CE2184E2130059FFC3 /* ReminderViewController.swift */,
+				654425E92184FD720066E5E4 /* PillBoxEnums.swift */,
+				655B22D02184E23F0059FFC3 /* RequestManager.swift */,
 				655B22CA2184D2C20059FFC3 /* ReminderCell.swift */,
 				655B22CC2184D5F40059FFC3 /* PillBoxReminderViewModel.swift */,
 				655B22BC2184C6FD0059FFC3 /* Main.storyboard */,
@@ -70,6 +94,15 @@
 			path = SafeScripts;
 			sourceTree = "<group>";
 		};
+		9455FF585ECC085E1D91E267 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B92013BA9D439E807E88C789 /* Pods-SafeScripts.debug.xcconfig */,
+				EC80C10E5131537217F34D99 /* Pods-SafeScripts.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,9 +110,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 655B22C72184C6FF0059FFC3 /* Build configuration list for PBXNativeTarget "SafeScripts" */;
 			buildPhases = (
+				6C288C2C209C3466021CB7AA /* [CP] Check Pods Manifest.lock */,
 				655B22B12184C6FD0059FFC3 /* Sources */,
 				655B22B22184C6FD0059FFC3 /* Frameworks */,
 				655B22B32184C6FD0059FFC3 /* Resources */,
+				5367C72291A4D376B90651D6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -136,6 +171,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5367C72291A4D376B90651D6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SafeScripts/Pods-SafeScripts-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SafeScripts/Pods-SafeScripts-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6C288C2C209C3466021CB7AA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SafeScripts-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		655B22B12184C6FD0059FFC3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -143,6 +225,9 @@
 			files = (
 				655B22BB2184C6FD0059FFC3 /* ViewController.swift in Sources */,
 				655B22CD2184D5F40059FFC3 /* PillBoxReminderViewModel.swift in Sources */,
+				655B22CF2184E2130059FFC3 /* ReminderViewController.swift in Sources */,
+				654425EA2184FD720066E5E4 /* PillBoxEnums.swift in Sources */,
+				655B22D12184E23F0059FFC3 /* RequestManager.swift in Sources */,
 				655B22CB2184D2C20059FFC3 /* ReminderCell.swift in Sources */,
 				655B22B92184C6FD0059FFC3 /* AppDelegate.swift in Sources */,
 			);
@@ -288,6 +373,7 @@
 		};
 		655B22C82184C6FF0059FFC3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B92013BA9D439E807E88C789 /* Pods-SafeScripts.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -306,6 +392,7 @@
 		};
 		655B22C92184C6FF0059FFC3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC80C10E5131537217F34D99 /* Pods-SafeScripts.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

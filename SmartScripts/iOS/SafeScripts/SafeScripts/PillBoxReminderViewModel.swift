@@ -8,21 +8,17 @@
 
 import Foundation
 
-enum PillDays: CaseIterable {
-    case monday
-    case tuesday
-    case wednesday
-    case thursday
-    case friday
-    case saturday
-    case sunday
+public struct PrescriptionReminder {
+    let prescriptionName: String
+    let prescriptionDescription: String
+    let time: Date
 }
 
 public class PillBoxReminderViewModel {
     
     let pillboxIdentifier: String = "Identifer"
     let medicationName: String = "Medication Name"
-    var pillBoxDay: [PillDays] = []
+    let timeOfDay: TimeInterval = 60 * 60 * 9
     
     init() {
         
