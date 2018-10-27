@@ -9,7 +9,7 @@
 import UIKit
 import CoreBluetooth
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     let tableView: UITableView = UITableView()
     
@@ -35,5 +35,23 @@ class ViewController: UIViewController {
         
         tableView.frame = tableViewFrame
     }
+    
+    //MARK: - TableView Delegate
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // We selected something, do something
+    }
+    
+    // MARK: TableView Datasource
+    func numberOfSections(in tableView: UITableView) -> Int {
+        // Return number of Sections
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // Number of rows in section
+        return 1
+    }
+    
 }
 
