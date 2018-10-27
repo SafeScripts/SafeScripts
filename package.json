@@ -1,0 +1,35 @@
+{
+  "name": "safescripts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "client": "react-scripts start",
+    "server": "nodemon --watch server server/server.js",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChadEBrady/SafeScripts.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChadEBrady/SafeScripts/issues"
+  },
+  "homepage": "https://github.com/ChadEBrady/SafeScripts#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "particle-api-js": "^7.2.3",
+    "pg": "^7.6.0",
+    "session-middleware": "^1.0.2"
+  }
+}
