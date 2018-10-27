@@ -25,25 +25,45 @@ class RequestManager {
      **/
     
     static func savePrescription(_ script: PrescriptionReminder) {
-        guard let newURL = URL(string: getURL) else { return }
-        let request = URLRequest(url: newURL)
-        let task = URLSession.shared.dataTask(with: request) {  data, response, error in
-            
-        }
-        task.resume()
-    
-        
-//        if var urlRequest = try? URLRequest(url: newURL, method: .post) {
-//            let encoder = JSONEncoder()
-//                if let encoded = try? encoder.encode(script) {
-//                    urlRequest.httpBody = encoded
-//                    let task = URLSession.shared.dataTask(with: urlRequest) {
-//                        data, response, error in
-//                        // Your completion handler code here
-//                    }
-//                task.resume()
-//            }
+        guard let newURL = URL(string: baseURL) else { return }
+//        let request = URLRequest(url: newURL)
+//        let task = URLSession.shared.dataTask(with: request) {  data, response, error in
+//
 //        }
+//        task.resume()
+//
+        
+        if var urlRequest = try? URLRequest(url: newURL, method: .post) {
+            let encoder = JSONEncoder()
+                if let encoded = try? encoder.encode(script) {
+                    urlRequest.httpBody = encoded
+                    let task = URLSession.shared.dataTask(with: urlRequest) {
+                        data, response, error in
+                        print(response)
+                        // Your completion handler code here
+                    }
+                task.resume()
+            }
+        }
     }
 
+    static func turnOnLight() {
+        guard let newURL = URL(string: apiBaseURL) else { return }
+//        let data =
+        if var urlRequest = try? URLRequest(url: newURL, method: .post) {
+//            let encoder = JSONEncoder()
+//            if let encoded = try? encoder.encode(script) {
+//                urlRequest.httpBody = encoded
+                let task = URLSession.shared.dataTask(with: urlRequest) {
+                    data, response, error in
+                    print(response)
+                    print(error)
+                    print(data)
+                    // Your completion handler code here
+                }
+                task.resume()
+//            }
+        }
+    }
+    
 }

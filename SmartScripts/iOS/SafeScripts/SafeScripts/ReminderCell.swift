@@ -11,10 +11,12 @@ import UIKit
 public class ReminderCell: UITableViewCell {
     
     let textView = UITextView()
+    let timeView = UITextView()
     
     public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(textView)
+        contentView.addSubview(timeView)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -25,6 +27,10 @@ public class ReminderCell: UITableViewCell {
         textView.text = viewModel.medicationName
         textView.textColor = .black
         textView.font = UIFont.systemFont(ofSize: 16)
+        
+        timeView.text = viewModel.timeOfDay
+        timeView.textColor = .gray
+        timeView.font = UIFont.systemFont(ofSize: 16)
     }
     
     public override func layoutSubviews() {
@@ -44,6 +50,13 @@ public class ReminderCell: UITableViewCell {
         cellSize.height = textViewFrame.maxY + 12
         
         textView.frame = textViewFrame
+        
+        var timeFrame = CGRect.zero
+        timeFrame.size = timeView.sizeThatFits(size)
+        timeFrame.origin.x = size.width - timeFrame.width - 12
+        timeFrame.origin.y = 12
+        
+        timeView.frame = timeFrame
         
         return cellSize
     }

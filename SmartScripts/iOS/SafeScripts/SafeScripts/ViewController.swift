@@ -17,7 +17,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     let tableView = UITableView()
     let button = UIButton()
-        
+    
+    let onLightButton = UIButton()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,6 +45,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         button.layer.borderWidth = 1.0
         button.layer.cornerRadius = 4.0
         button.addTarget(self, action: #selector(addReminder), for: .touchUpInside)
+        
+        view.addSubview(onLightButton)
+        onLightButton.setTitle("Turn On Light", for: .normal)
+        onLightButton.setTitleColor(.black, for: .normal)
+        onLightButton.layer.borderColor = UIColor.black.cgColor
+        onLightButton.layer.borderWidth = 1.0
+        onLightButton.layer.cornerRadius = 4.0
+        onLightButton.addTarget(self, action: #selector(turnOnLight), for: .touchUpInside)
+    }
+    
+    @objc private func turnOnLight() {
+        RequestManager.turnOnLight()
     }
 
     
@@ -66,13 +80,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableViewFrame.size.width = size.width
         tableViewFrame.size.height = size.height / 2
         
-        buttonFrame.origin.x = 12
         buttonFrame.origin.y = tableViewFrame.maxY + 20
         buttonFrame.size = button.sizeThatFits(size)
         buttonFrame.size.width = buttonFrame.size.width + 24
+        buttonFrame.origin.x = (size.width - buttonFrame.width) / 2
+        
+        var onFrame = CGRect.zero
+        onFrame.origin.x = 12
+        onFrame.size.width = size.width
+        onFrame.size.height = 60
+        onFrame.origin.y = size.height - onFrame.height - view.safeAreaInsets.bottom
         
         button.frame = buttonFrame
         tableView.frame = tableViewFrame
+    //    onLightButton.frame = onFrame
     }
     
     //MARK: - TableView Delegate
@@ -83,6 +104,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // We selected something, do something
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     // MARK: TableView Datasource
@@ -110,5 +132,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
+
 }
 

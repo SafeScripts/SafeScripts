@@ -48,7 +48,7 @@ public class PillBoxReminderViewModel {
         medicationName = reminder.name
         _timeOfDay = Date(timeIntervalSince1970: reminder.time)
         formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm"
+        formatter.dateFormat = "h:mm a"
     }
     
 }
