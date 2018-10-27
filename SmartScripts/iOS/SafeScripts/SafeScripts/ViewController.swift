@@ -11,12 +11,11 @@ import CoreBluetooth
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    let tableView: UITableView = UITableView()
+    @IBOutlet var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.addSubview(tableView)
         commonSetup()
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -27,21 +26,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.dataSource = self
     }
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        sizeThatFits(size: view.bounds.size)
-    }
-    
-    public func sizeThatFits(size: CGSize) {
-        var tableViewFrame = CGRect.zero
-        
-        tableViewFrame.origin.y = view.safeAreaInsets.top
-        tableViewFrame.size.width = size.width
-        tableViewFrame.size.height = size.height / 2
-        
-        tableView.frame = tableViewFrame
-    }
-    
     //MARK: - TableView Delegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
