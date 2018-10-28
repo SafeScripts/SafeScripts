@@ -36,7 +36,6 @@ class RequestManager {
             let encoder = JSONEncoder()
                 if let encoded = try? encoder.encode(script) {
                     urlRequest.httpBody = encoded
-                    urlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
                     
                     let task = URLSession.shared.dataTask(with: urlRequest) {
                         data, response, error in
