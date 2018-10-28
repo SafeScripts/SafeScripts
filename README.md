@@ -16,7 +16,3 @@ With SafeScripts, I can get real time alerts when my pillbox is opened and I can
 * PostgreSQL
 * Axios
 * Nodemon
-
-
-
-## Sarah Test Push
