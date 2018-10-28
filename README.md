@@ -10,7 +10,6 @@ With SafeScripts, I can get real time alerts when my pillbox is opened and I can
 * Javascript
 * Swift / IOS
 * Particle Photon
-* Alamo fire
 * Node.js
 * Express
 * PostgreSQL
